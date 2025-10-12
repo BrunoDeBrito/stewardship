@@ -1,3 +1,1 @@
-#!/usr/bin/env sh
-echo"sail pint"
-
+echo "sail pint" > .husky/pre-commit
