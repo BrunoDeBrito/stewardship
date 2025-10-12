@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-# rodar os testes
-echo "sail artisan test --parallel | php"
-
-exit 0;
