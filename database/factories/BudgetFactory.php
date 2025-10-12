@@ -18,7 +18,9 @@ class BudgetFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'teste'         => $this->faker->name(),
+            'outros_teste'  => $this->faker->name(),
+            'teste_mingual' => $this->faker->name(),
         ];
     }
 }
