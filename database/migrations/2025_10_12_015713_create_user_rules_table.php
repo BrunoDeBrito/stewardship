@@ -10,8 +10,16 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('user_rules', function (Blueprint $table) {
+        Schema::create('user_rules', static function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->foreignId('rule_id')
+                ->constrained()
+                ->cascadeOnDelete();
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

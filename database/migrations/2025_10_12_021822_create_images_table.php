@@ -10,8 +10,14 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('images', static function (Blueprint $table) {
             $table->id();
+            $table->string('path_url');
+            $table->string('path');
+            $table->string('name');
+            $table->string('mime_type');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

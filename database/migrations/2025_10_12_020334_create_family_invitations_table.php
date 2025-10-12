@@ -10,8 +10,15 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('family_invitations', function (Blueprint $table) {
+        Schema::create('family_invitations', static function (Blueprint $table) {
             $table->id();
+            $table->foreignId('family_id')
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->string('token', 150)->unique();
+
+            $table->timestamp('expires_at');
+            $table->timestamp('accepted_at');
             $table->timestamps();
         });
     }

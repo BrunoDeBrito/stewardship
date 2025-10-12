@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\{StoreBudgetRequest, UpdateBudgetRequest};
-use App\Models\Budget;
+use App\Http\Requests\Api\{StoreInstallmentRequest, UpdateInstallmentRequest};
+use App\Models\Installment;
 
-class BudgetController
+class InstallmentController
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +26,7 @@ class BudgetController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBudgetRequest $request)
+    public function store(StoreInstallmentRequest $request)
     {
         //
     }
@@ -34,7 +34,7 @@ class BudgetController
     /**
      * Display the specified resource.
      */
-    public function show(Budget $budget)
+    public function show(Installment $installment)
     {
         //
     }
@@ -42,7 +42,7 @@ class BudgetController
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Budget $budget)
+    public function edit(Installment $installment)
     {
         //
     }
@@ -50,7 +50,7 @@ class BudgetController
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBudgetRequest $request, Budget $budget)
+    public function update(UpdateInstallmentRequest $request, Installment $installment)
     {
         //
     }
@@ -58,7 +58,7 @@ class BudgetController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Budget $budget)
+    public function destroy(Installment $installment)
     {
         //
     }

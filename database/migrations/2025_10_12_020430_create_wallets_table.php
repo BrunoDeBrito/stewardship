@@ -10,8 +10,21 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('wallets', function (Blueprint $table) {
+        Schema::create('wallets', static function (Blueprint $table) {
             $table->id();
+            $table->foreignId('wallet_type_id')
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->foreignId('user_id')
+                ->constrained()
+                ->nullOnDelete();
+            $table->foreignId('family_id')
+                ->nullable()
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->decimal('balance', 10, 2);
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

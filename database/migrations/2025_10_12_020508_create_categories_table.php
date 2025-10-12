@@ -10,8 +10,24 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('categories', static function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                ->nullable()
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->foreignId('family_id')
+                ->nullable()
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->string('name', 50);
+
+            $table->boolean('is_active')->default(true);
+            $table->string('color', 20);
+            $table->string('icon', 50);
+            $table->string('descriptions', 150);
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

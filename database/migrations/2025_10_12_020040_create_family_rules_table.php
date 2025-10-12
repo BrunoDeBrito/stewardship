@@ -10,9 +10,15 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('tags', static function (Blueprint $table) {
+        Schema::create('family_rules', static function (Blueprint $table) {
             $table->id();
+            $table->foreignId('status_rule_id')->nullable();
+            $table->foreignId('family_id')
+                ->constrained()
+                ->cascadeOnDelete();
             $table->string('name');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -22,6 +28,6 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('family_rules');
     }
 };

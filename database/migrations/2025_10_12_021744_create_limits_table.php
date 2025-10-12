@@ -10,8 +10,25 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('limits', function (Blueprint $table) {
+        Schema::create('limits', static function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->foreignId('family_id')
+                ->nullable()
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->foreignId('category_id')
+                ->nullable()
+                ->constrained()
+                ->cascadeOnDelete();
+
+            $table->decimal('value', 10, 2);
+            $table->string('description', 150);
+
+            $table->date('date');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

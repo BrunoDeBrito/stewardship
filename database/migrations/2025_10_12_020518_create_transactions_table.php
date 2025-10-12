@@ -10,8 +10,32 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('transactions', static function (Blueprint $table) {
             $table->id();
+            $table->foreignId('transaction_type_id');
+            $table->foreignId('card_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
+            $table->foreignId('wallet_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
+            $table->foreignId('category_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
+            $table->foreignId('user_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
+
+            $table->integer('installments_quantity')->default(1);
+            $table->decimal('amount', 10, 2);
+
+            $table->string('description');
+
+            $table->date('date');
             $table->timestamps();
         });
     }

@@ -10,8 +10,15 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('families', function (Blueprint $table) {
+        Schema::create('families', static function (Blueprint $table) {
             $table->id();
+            $table->foreignId('status_family_id')->nullable();
+            $table->foreignId('user_id')
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->string('name');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\{StoreTagRequest, UpdateTagRequest};
-use App\Models\Tag;
+use App\Http\Requests\Api\{StoreFamilyRuleRequest, UpdateFamilyRuleRequest};
+use App\Models\FamilyRule;
 
-class TagController
+class FamilyRuleController
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +26,7 @@ class TagController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTagRequest $request)
+    public function store(StoreFamilyRuleRequest $request)
     {
         //
     }
@@ -34,7 +34,7 @@ class TagController
     /**
      * Display the specified resource.
      */
-    public function show(Tag $tag)
+    public function show(FamilyRule $familyRule)
     {
         //
     }
@@ -42,7 +42,7 @@ class TagController
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tag $tag)
+    public function edit(FamilyRule $familyRule)
     {
         //
     }
@@ -50,7 +50,7 @@ class TagController
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTagRequest $request, Tag $tag)
+    public function update(UpdateFamilyRuleRequest $request, FamilyRule $familyRule)
     {
         //
     }
@@ -58,7 +58,7 @@ class TagController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tag $tag)
+    public function destroy(FamilyRule $familyRule)
     {
         //
     }

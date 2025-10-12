@@ -10,8 +10,30 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('goals', function (Blueprint $table) {
+        Schema::create('goals', static function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->foreignId('family_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
+            $table->foreignId('category_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
+            $table->decimal('target_amount', 15, 2);
+            $table->decimal('current_amount', 15, 2)->default(0);
+
+            $table->string('name');
+            $table->text('description')->nullable();
+
+            $table->boolean('is_active')->default(true);
+            $table->boolean('is_done')->default(false);
+
+            $table->date('target_date')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
