@@ -2,7 +2,7 @@
 . "$(dirname "$0")/h"
 
 # Rodar o phpstan
-./vendor/bin/sail phpstan
+./vendor/bin/phpstan
 if [ $? -ne 0 ]; then
     echo "Opa! Deu ruim aqui com PHPSTAN. Arrume antes de continuar... 😉";
     exit 1;
