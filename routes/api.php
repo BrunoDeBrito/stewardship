@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', static function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+// region Users
+Route::prefix('users')
+    ->name('users.')
+    ->group(base_path('routes/api/users.php'));
+// endregion
+
