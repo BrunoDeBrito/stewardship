@@ -15,9 +15,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('family_id')->nullable();
             $table->string('name');
+            $table->string('full_name');
+            $table->string('user_name')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->boolean('is_active')->default(true);
+            $table->boolean('is_active')
+                ->default(true);
+            $table->boolean('is_read_terms')
+                ->default(true);
 
             $table->rememberToken();
             $table->softDeletes();

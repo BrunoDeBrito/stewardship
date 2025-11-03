@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\{StoreWalletRequest, UpdateWalletRequest};
+
+use App\Http\Requests\Api\StoreWalletRequest;
+use App\Http\Requests\Api\UpdateWalletRequest;
 use App\Models\Wallet;
 
 class WalletController extends Controller

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\{StoreTransactionTypeRequest, UpdateTransactionTypeRequest};
+
+use App\Http\Requests\Api\StoreTransactionTypeRequest;
+use App\Http\Requests\Api\UpdateTransactionTypeRequest;
 use App\Models\TransactionType;
 
 class TransactionTypeController

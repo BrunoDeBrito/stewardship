@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\{StoreImageRequest, UpdateImageRequest};
+
+use App\Http\Requests\Api\StoreImageRequest;
+use App\Http\Requests\Api\UpdateImageRequest;
 use App\Models\Image;
 
 class ImageController

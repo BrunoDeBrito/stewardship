@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\{StoreBudgetRequest, UpdateBudgetRequest};
+
+use App\Http\Requests\Api\StoreBudgetRequest;
+use App\Http\Requests\Api\UpdateBudgetRequest;
 use App\Models\Budget;
 
 class BudgetController

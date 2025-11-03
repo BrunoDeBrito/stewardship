@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\{StoreTagRequest, UpdateTagRequest};
+use App\Http\Requests\Api\StoreTagRequest;
+use App\Http\Requests\Api\UpdateTagRequest;
 use App\Models\Tag;
 
 class TagController

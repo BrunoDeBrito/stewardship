@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\{StoreFamilyInvitationRequest, UpdateFamilyInvitationRequest};
+
+use App\Http\Requests\Api\StoreFamilyInvitationRequest;
+use App\Http\Requests\Api\UpdateFamilyInvitationRequest;
 use App\Models\FamilyInvitation;
 
 class FamilyInvitationController extends Controller

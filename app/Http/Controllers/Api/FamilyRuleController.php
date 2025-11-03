@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\{StoreFamilyRuleRequest, UpdateFamilyRuleRequest};
+
+use App\Http\Requests\Api\StoreFamilyRuleRequest;
+use App\Http\Requests\Api\UpdateFamilyRuleRequest;
 use App\Models\FamilyRule;
 
 class FamilyRuleController
