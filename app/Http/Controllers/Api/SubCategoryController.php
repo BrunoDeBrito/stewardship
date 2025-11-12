@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-
-use App\Http\Requests\Api\StoreSubCategoryRequest;
-use App\Http\Requests\Api\UpdateSubCategoryRequest;
+use App\Http\Requests\Api\{StoreSubCategoryRequest, UpdateSubCategoryRequest};
 use App\Models\SubCategory;
 
 class SubCategoryController

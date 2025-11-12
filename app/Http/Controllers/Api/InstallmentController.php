@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-
-use App\Http\Requests\Api\StoreInstallmentRequest;
-use App\Http\Requests\Api\UpdateInstallmentRequest;
+use App\Http\Requests\Api\{StoreInstallmentRequest, UpdateInstallmentRequest};
 use App\Models\Installment;
 
 class InstallmentController

@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\StoreGoalRequest;
-use App\Http\Requests\Api\UpdateGoalRequest;
+use App\Http\Requests\Api\{StoreGoalRequest, UpdateGoalRequest};
 use App\Models\Goal;
 
 class GoalController

@@ -12,10 +12,7 @@ class UserController extends Controller
 {
     public function __construct(protected UserService $service) {}
 
-    /**
-     * @return AnonymousResourceCollection
-     */
-    public function index(IndexRequest $request)
+    public function index(IndexRequest $request): AnonymousResourceCollection
     {
         return UserResource::collection($this->service->getAll($request->validated()));
     }
@@ -28,14 +25,12 @@ class UserController extends Controller
     public function store(StoreUserRequest $request): UserResource|string
     {
         $user = $this->service->create($request->validated());
-
         return UserResource::make($user);
     }
 
     public function update(UpdateUserRequest $request, User $user): UserResource
     {
         $this->service->update($user, $request->validated());
-
         return UserResource::make($user);
     }
 

@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-
-use App\Http\Requests\Api\StoreLimitRequest;
-use App\Http\Requests\Api\UpdateLimitRequest;
+use App\Http\Requests\Api\{StoreLimitRequest, UpdateLimitRequest};
 use App\Models\Limit;
 
 class LimitController

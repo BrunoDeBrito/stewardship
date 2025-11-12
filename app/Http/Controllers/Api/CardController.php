@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\StoreCardRequest;
-use App\Http\Requests\Api\UpdateCardRequest;
+use App\Http\Requests\Api\{StoreCardRequest, UpdateCardRequest};
 use App\Models\Card;
 
 class CardController extends Controller

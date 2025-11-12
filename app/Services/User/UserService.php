@@ -6,12 +6,17 @@ use App\Http\Resources\User\UserResource;
 use App\Models\User;
 use App\Services\Core\{BaseService, ErrorService};
 use Exception;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Passport\Bridge\UserRepository;
+use Laravel\Sanctum\HasApiTokens;
 
 class UserService extends BaseService
 {
+
     protected $deleteRelations = [];
 
     public function __construct(UserRepository $repository)
@@ -35,11 +40,11 @@ class UserService extends BaseService
             }
 
             return [
-                'status'      => true,
-                'message'     => 'User Logged In Successfully',
-                'token'       => $user->createToken('API TOKEN', ['guard-api'])->plainTextToken,
-                'user'        => UserResource::make($user),
-                'permissions' => $user->getAllPermissions(),
+                'status'  => true,
+                'message' => 'User Logged In Successfully',
+                'token'   => $user->createToken('API TOKEN', ['guard-api'])->plainTextToken,
+                'user'    => UserResource::make($user),
+                //                'permissions' => $user->getAllPermissions(),
             ];
 
         } catch (Exception $e) {

@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-
-use App\Http\Requests\Api\StoreTransactionRequest;
-use App\Http\Requests\Api\UpdateTransactionRequest;
+use App\Http\Requests\Api\{StoreTransactionRequest, UpdateTransactionRequest};
 use App\Models\Transaction;
 
 class TransactionController extends Controller

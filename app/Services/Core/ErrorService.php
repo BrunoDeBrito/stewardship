@@ -3,9 +3,9 @@
 namespace App\Services\Core;
 
 use Exception;
-use Illuminate\Http\{JsonResponse, Request};
-use Symfony\Component\HttpFoundation\{Response};
+use Illuminate\Http\{JsonResponse};
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpFoundation\{Response};
 
 class ErrorService
 {
@@ -20,7 +20,7 @@ class ErrorService
             ], Response::HTTP_INTERNAL_SERVER_ERROR));
 
             return response()->json([
-                'message' => 'Falha detectada, favor entrar em contato com o suporte'
+                'message' => 'Falha detectada, favor entrar em contato com o suporte',
             ],
                 Response::HTTP_OK
             );
